@@ -1,0 +1,32 @@
+- name: "Installing basic tools"
+  yum: 
+    name:
+      - vim
+      - git
+      - bind-utils
+      - emacs
+    state: present
+
+- name: "Adding bashrc and bash prompt and aliases"
+  copy: 
+    src: ../files/.bashrc
+    dest: /home/vagrant/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "Adding bash aliases"
+  copy: 
+    src: ../files/.bash_aliases
+    dest: /home/vagrant/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "Adding git prompt"
+  copy: 
+    src: ../files/.git-prompt.sh
+    dest: /home/vagrant/
+    owner: root
+    group: root
+    mode: 0644

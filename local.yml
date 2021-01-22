@@ -1,6 +1,8 @@
 ---
 - hosts: anslab
   become: true
+  roles:
+   - basic
 
   tasks:
   - name: install epel-release

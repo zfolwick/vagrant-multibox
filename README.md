@@ -24,3 +24,9 @@ echo vagrant@10.0.0.10 vagrant@10.0.0.11 vagrant@10.0.0.12 | xargs -n1 ssh-copy-
 On linux systems, `xargs` may need to replace the `-n1` command.
 
 Then I can can simply run `ansible -i hosts all -m ping`.
+
+# Ansible-playbook
+In this repo is a playbook, a role, and some files that can be copied over. The main.yml will install a basic set of tools on the machine, and copy some files over to each machine, which offer a better bash experience, and a custom prompt. This can be run using
+```
+ansible-playbook -K local.yml -i hosts
+```

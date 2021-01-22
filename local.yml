@@ -1,9 +1,12 @@
 ---
-- hosts: localhost
-  become: false
+- hosts: anslab
+  become: true
 
   tasks:
+  - name: install epel-release
+    package:
+      name: epel-release
+
   - name: install htop
     package:
       name: htop
-
